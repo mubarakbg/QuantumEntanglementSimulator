@@ -75,7 +75,7 @@
   (ok (default-to (list) (map-get? user-pairs user)))
 )
 
-;; Verify entanglement (simplified)
+;; Verify entanglement (updated)
 (define-read-only (verify-entanglement (pair-id uint))
   (let
     (
@@ -85,7 +85,7 @@
     )
     (if (and (is-some particle1) (is-some particle2))
       (ok (not (is-eq (unwrap! particle1 ERR-NOT-ENTANGLED) (unwrap! particle2 ERR-NOT-ENTANGLED))))
-      (err ERR-NOT-ENTANGLED)
+      (ok false)
     )
   )
 )
